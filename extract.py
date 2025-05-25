@@ -5,7 +5,7 @@ logging.basicConfig(level=logging.INFO)
 
 def extract_data(base_currency: str, target_currency: str):
 
-    url = f"https://api.exchangerate.host/latest?base={base_currency}&symbols={target_currency}"
+    url = f"https://openexchangerates.org/api/latest.json?app_id=a92f8bad8e044bc79949a676886da2c8"
     logging.info(f"Requesting exchange rate from {base_currency} to {target_currency}...")
     response = requests.get(url)
     if response.status_code != 200:
