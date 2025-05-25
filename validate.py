@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.INFO)
 
 def test_api_response():
     logging.info("Running API response test...")
-    data = extract_data("EGP", "USD")
+    data = extract_data()
     assert isinstance(data, dict)
     assert "rates" in data and "USD" in data["rates"]
     logging.info("API test passed.")
@@ -15,8 +15,8 @@ def test_transformation():
     logging.info("Running transformation test...")
     sample = {
         "date": "2024-01-01",
-        "rates": {"USD": 0.032},
-        "base": "EGP"
+        "rates": {"EGP": 0.032},
+        "base": "USD"
     }
     df = transform_data(sample)
     assert "date" in df.columns and "egp_to_usd" in df.columns

@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO)
 def transform_data(raw_data):
     logging.info("Transforming API data...")
     date = raw_data.get("date")
-    rate = raw_data.get("rates", {}).get("USD")
+    rate = raw_data.get("rates", {}).get('EGP')
     if rate is None:
         raise ValueError("USD rate not found in API response")
     df = pd.DataFrame([{
