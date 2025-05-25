@@ -1,6 +1,6 @@
 import logging
-from etl.extract import extract_data
-from etl.transform import transform_data
+from extract import extract_data
+from transform import transform_data
 
 logging.basicConfig(level=logging.INFO)
 
